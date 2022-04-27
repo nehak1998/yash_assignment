@@ -1,0 +1,8 @@
+.menu{width:1000px;
+    margin:0  auto;
+    }
+    .menu div {
+        display:inline-block;
+        width:300px;
+        
+    }

@@ -1,0 +1,96 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+    <form [formGroup]="contactform" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="sname">Full Name</label>
+            <input type="text" id="sname" name="sname" formControlName="sname" class="form-control">
+            <div *ngIf="contactform.controls['sname'].invalid && contactform.controls['sname'].touched">
+                <span class="error" *ngIf="contactform.controls['sname'].errors?.['required']">name is required</span>
+                <span class="error" *ngIf="contactform.controls['sname'].errors?.['minlength']">name at least have 2 char </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="std">Class</label>
+            <input type="number" id="std" name="std" formControlName="std" class="form-control">
+            <div *ngIf="contactform.controls['std'].invalid && contactform.controls['std'].touched">
+                <span class="error" *ngIf="contactform.controls['std'].errors?.['required']">class is required</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rollno">Roll Number</label>
+            <input type="number" id="rollno" name="rollno" formControlName="rollno" class="form-control">
+            <div *ngIf="contactform.controls['rollno'].invalid && contactform.controls['rollno'].touched">
+                <span class="error" *ngIf="contactform.controls['rollno'].errors?.['required']">roll number is required</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="maths">Maths</label>
+            <input type="number" id="maths" name="maths" formControlName="maths" class="form-control">
+            <div *ngIf="contactform.controls['maths'].invalid && contactform.controls['maths'].touched">
+                <span class="error" *ngIf="contactform.controls['maths'].errors?.['required']">marks is required</span>
+                <span class="error" *ngIf="contactform.controls['maths'].errors?.['min']">marks should be equal or above 40 </span>
+                <span class="error" *ngIf="contactform.controls['maths'].errors?.['max']">marks should be equal or below 100 </span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="physics">Physics</label>
+            <input type="number" id="physics" name="physics" formControlName="physics" class="form-control">
+            <div *ngIf="contactform.controls['physics'].invalid && contactform.controls['physics'].touched">
+                <span class="error" *ngIf="contactform.controls['physics'].errors?.['required']">marks is required</span>
+                <span class="error" *ngIf="contactform.controls['physics'].errors?.['min']">marks should be equal or above 40 </span>
+                <span class="error" *ngIf="contactform.controls['physics'].errors?.['max']">marks should be equal or below 100 </span>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="chemistry">Chemistry</label>
+            <input type="number" id="chemistry" name="chemistry" formControlName="chemistry" class="form-control">
+            <div *ngIf="contactform.controls['chemistry'].invalid && contactform.controls['chemistry'].touched">
+                <span class="error" *ngIf="contactform.controls['chemistry'].errors?.['required']">marks is required</span>
+                <span class="error" *ngIf="contactform.controls['chemistry'].errors?.['min']">marks should be equal or above 40 </span>
+                <span class="error" *ngIf="contactform.controls['chemistry'].errors?.['max']">marks should be equal or below 100 </span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="hindi">Hindi</label>
+            <input type="number" id="hindi" name="hindi" formControlName="hindi" class="form-control">
+            <div *ngIf="contactform.controls['hindi'].invalid && contactform.controls['hindi'].touched">
+                <span class="error" *ngIf="contactform.controls['hindi'].errors?.['required']">marks is required</span>
+                <span class="error" *ngIf="contactform.controls['hindi'].errors?.['min']">marks should be equal or above 40 </span>
+                <span class="error" *ngIf="contactform.controls['hindi'].errors?.['max']">marks should be equal or below 100 </span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="english">English</label>
+            <input type="number" id="english" name="english" formControlName="english" class="form-control">
+            <div *ngIf="contactform.controls['english'].invalid && contactform.controls['english'].touched">
+                <span class="error" *ngIf="contactform.controls['english'].errors?.['required']">marks is required</span>
+                <span class="error" *ngIf="contactform.controls['english'].errors?.['min']">marks should be equal or above 40 </span>
+                <span class="error" *ngIf="contactform.controls['english'].errors?.['max']">marks should be equal or below 100 </span>
+            </div>
+        </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input type="radio" id="gender" name="gender" formControlName="gender" value="male">Male &nbsp;
+                    <input type="radio" id="gender" name="gender" formControlName="gender" value="female">FeMale
+                    <div *ngIf="contactform.controls['gender'].invalid && contactform.controls['gender'].touched">
+                        <span class="error" *ngIf="contactform.controls['gender'].errors?.['required']">Gender is required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" (click)="per()" class="btn btn-success" [disabled]="!contactform.valid">Send</button>
+                </div>
+    </form>
+</div>
+<h3>result:{{res}}</h3>
+<h3>Grade:{{grade}}</h3>
+<div class="col-md-2"></div>

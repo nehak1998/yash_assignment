@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book List</title>
+</head>
+<body>
+<table align="center" width=500 border=2px>
+ <tr>
+  <th>S.No</th>
+  <th>Name</th>
+  <th>Price</th>
+  <th>AID</th>
+  <th>PID</th>
+ </tr>
+ <tr th:each="data:${booklist}">
+ <td th:text=${data.bid}></td>
+ <td th:text=${data.title}></td>
+ <td th:text=${data.price}></td>
+ <td th:text=${data.aid}></td>
+ <td th:text=${data.pid}></td>
+ </tr>
+ 
+</table>
+</body>
+</html>
